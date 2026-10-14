@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f6f8;
+        }
+
+        h1 {
+            text-align: center;
+            color: #23395d;
+        }
+
+        form, #taskList {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input, select, button {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+        }
+
+        button {
+            cursor: pointer;
+            background: #23395d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        li {
+            margin: 12px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .delete {
+            width: auto;
+            margin-left: 10px;
+            background: #b42318;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Task Planner</h1>
+    <p>Organize your assignments and manage your deadlines.</p>
+
+    <form id="taskForm">
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" required
+               placeholder="e.g. Complete HTML assignment">
+
+        <label for="priority">Priority:</label>
+        <select id="priority" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" required>
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    <section id="taskList">
+        <h2>My Tasks</h2>
+        <p id="emptyMessage">No tasks yet. Add your first task!</p>
+        <ul id="tasks"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
